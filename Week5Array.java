@@ -5,19 +5,33 @@
  */
 
 /**
- * Provide Java code to create and initialize an array of integers (Java primitive int),
- * floats or any other Java primitive type of your choice. You pick the array name and length.
- * Demonstrate how you would determine the length of your array. Show this through a
- * code example you create where you use the length member.
+ * This class will mimic 10 rolls of a 6 sided die. The value of each roll will be stored in an
+ * arrary. Then the it will print out the nuber of each roll with its value.
  */
+import java.util.Random;//import the random utility
 
 public class Week5Array{
   public static void main (String[] args){
-    int dwyer[]=new int[10];
-    dwyer[0]=87;
-    dwyer[9]=142;
-    System.out.println(dwyer[5]);
 
+    int rollArray[]= new int[10];// initialize the "rollArray" array and limit it to 10 values
+    Random dice = new Random();// initialize a random object called "dice"
+/*
+ * The following for loop will make a variable "i" and set it to zero. Then while "i" is less
+ * than the rollArray length (ten) store an instance of the random object "dice" in the array
+ * then add one to i and continue
+ */
+   for (int i=0; i<rollArray.length; i++){
+     rollArray[i] = 1+dice.nextInt(6);
+    }//end for loop
+
+    System.out.println("Roll\tValue");//print the header for the output
+/*
+ * The following for loop will make a vairable "j" and set it to zero. Then while "j" is less
+ * than the rollArray length (ten) print out the value of "j" plus one and the value stored
+ * in the index equil to j. Then add one to "j" and continue.
+ */
+    for (int j=0; j<rollArray.length; j++){
+      System.out.println((j+1) + "\t" + rollArray[j]);
+    }//end for loop
   }//end main method
 }//end class
-
